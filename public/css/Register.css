@@ -1,0 +1,54 @@
+form {
+  background-color: #f3f5f9;
+  padding: 2rem;
+}
+@media (min-width: 992px) {
+  form {
+    width: 50%;
+    margin: auto;
+  }
+}
+form .all-form {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-color: #fff;
+  padding-inline-start: 1rem;
+}
+form .all-form i {
+  background-color: var(--bg-body);
+  padding: 15px;
+  border-radius: 10px;
+  color: var(--main-color);
+}
+.form-control,
+.form-control:focus,
+.form-select {
+  background-color: #fff;
+  border-color: #fff;
+  color: #999;
+  box-shadow: none;
+  width: 100%;
+}
+.arabic-version .form-control {
+  text-align: right;
+}
+form .main-btn {
+  border: 0;
+  width: 50%;
+}
+.form-select {
+  border: 1px solid #ddd;
+  width: fit-content;
+  background-image: url("../images/faqs/arrow-down.png");
+}
+.text-main-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+.text-main-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}

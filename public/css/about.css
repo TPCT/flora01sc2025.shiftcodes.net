@@ -1,0 +1,99 @@
+
+.about-section {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 3rem; 
+    padding-top: 3rem;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+button:hover {
+    background-color: white; /* تغيير لون الخلفية عند التحويم */
+    color: rgba(0, 38, 62); /* تغيير لون النص عند التحويم */
+    border: 1px solid rgba(0, 38, 62); /* تغيير لون الحدود عند التحويم */
+  }
+
+
+.full-width-image {
+    width: 100%;  
+    height: auto; 
+    object-fit: contain; 
+}
+
+
+
+.about-third-section{
+    background-color:rgba(0, 38, 62, .1) ;
+}
+
+
+
+.shared-section{
+    background-color:rgba(0, 38, 62, .1) ;
+    height:9rem ;
+    width: 100%;
+    color:rgba(0, 38, 62); ;
+}
+
+
+.about-third-section .row {
+    margin: 2rem;
+    padding: 2rem;
+}
+.aboutItem{
+    background-color: white;
+}
+
+.icon-wrapper {
+    margin: 1.5rem; 
+}
+
+.iconImage {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%; 
+    background-color: rgba(245, 138, 30, 1); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-fouth-section{
+    padding: 2rem;
+}
+.about-fouth-section h3{
+    padding: 3rem;
+}
+
+.about-button{
+    width: 11rem;
+    height: 3rem;
+    background-color: var(--primary-color) ;
+    color: white;
+    border-radius: 2rem;
+}
+
+
+
+.title {
+    min-height: 3.6rem;             
+    display: -webkit-box;        
+    -webkit-line-clamp: 2;       
+    -webkit-box-orient: vertical; 
+    overflow: hidden;           
+    text-overflow: ellipsis;
+}
+  
+
+
+
+@media (max-width: 576px) { 
+    .about-third-section .row {
+       margin: 0 !important;
+       padding: 1rem !important;
+} }

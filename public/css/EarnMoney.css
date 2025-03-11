@@ -1,0 +1,21 @@
+.earn-map {
+    max-width: 100%;
+    max-height: 450px;
+}
+
+.earn-list {
+    line-height: 2;
+}
+
+.earn-tier {
+    min-height: 332px;
+}
+
+
+.arabic-version .earn-list {
+    line-height: 1;
+}
+
+.section-earn .row{
+    --bs-gutter-x:0;
+}

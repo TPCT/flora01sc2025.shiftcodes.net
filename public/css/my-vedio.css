@@ -1,0 +1,4 @@
+.arabic-version .row {
+    text-align: unset !important;
+    justify-content: flex-end;
+}

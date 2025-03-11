@@ -1,0 +1,14 @@
+.block-bg {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #F3F5F9;
+}
+
+.header .logout-btn {
+    min-width: 96px;
+    border-width: 2px;
+    height: 42px;
+    border-radius: 25px;
+    color: #757575 !important;
+    border: 2px solid #d2d2db !important;
+}
