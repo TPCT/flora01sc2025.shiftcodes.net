@@ -10,7 +10,7 @@ class SecurityController extends Controller
 {
     public function updateSecurity(Request $request)
     {
-      
+
 
         $request->validate([
             'two_factor_auth' => 'nullable|boolean',
@@ -18,10 +18,7 @@ class SecurityController extends Controller
             'email_new_ip' => 'nullable|boolean',
         ]);
 
-        $security = SecuritySetting::firstOrCreate(
-            ['user_id' => Auth::id()],
-            ['two_factor_auth' => false, 'allowed_ips' => '', 'email_new_ip' => false]
-        );
+        $security = SecuritySetting::updateOrCreate(["user_id" => Auth::id()], ["two_factor_auth" => $request->boolean("two_factor_auth"), "allowed_ips" => $request->input("allowed_ips"), "email_new_ip" => $request->boolean("email_new_ip")]);
 
         $security->update([
             'two_factor_auth' => $request->has('two_factor_auth'),

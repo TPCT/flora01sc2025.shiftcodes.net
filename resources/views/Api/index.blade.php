@@ -12,7 +12,7 @@ Api
     <section class="api py-5">
         <div class="container">
             <div class="alert bg-danger text-white fw-bold  ">
-                API disabled
+                {{ __('lang.API disabled') }}
             </div>
         </div>
     </section>

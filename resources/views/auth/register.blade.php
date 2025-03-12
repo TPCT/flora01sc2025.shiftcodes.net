@@ -9,7 +9,7 @@
         <div class="container">
             <div class="main-head text-center mb-5">
                 <h1>Register</h1>
-                <p class="text-muted">Sign up for a new account.</p>
+                <p class="text-muted">{{ __('lang.Sign up for a new account.') }}</p>
             </div>
 
             <form action="{{'/register' }}" method="POST">
@@ -19,7 +19,7 @@
                         <div class="all-form">
                             <i class="fa-regular fa-user"></i>
                             <div class="form-group w-100">
-                                <input type="text" name="name" class="form-control" placeholder="Username" required>
+                                <input type="text" name="name" class="form-control" placeholder="{{ __('lang.Username') }}" required>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         <div class="all-form">
                             <i class="fa-regular fa-envelope"></i>
                             <div class="form-group w-100">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                <input type="email" name="email" class="form-control" placeholder="{{ __('lang.Email') }}" required>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="all-form">
                             <i class="fa-solid fa-lock"></i>
                             <div class="form-group w-100">
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password" class="form-control" placeholder="{{ __('lang.Password') }}" required>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="all-form">
                             <i class="fa-solid fa-lock"></i>
                             <div class="form-group w-100">
-                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="{{ ('lang.Confirm_Password') }}" required>
                             </div>
                         </div>
                     </div>
@@ -57,13 +57,13 @@
 
                     <div class="col-lg-6 mb-4">
                         <button class="main-btn d-flex align-items-center justify-content-around" type="submit">
-                            Register
+                            {{ __('lang.Register') }}
                         </button>
                     </div>
 
                     <div class="col-lg-12 d-flex align-items-center mb-4">
-                        <p class="mb-0">Already have an account?
-                            <a href="{{ route('login') }}" class="text-main-link">Login</a>
+                        <p class="mb-0">{{ __('lang.Already have an account') }}?
+                            <a href="{{ route('login') }}" class="text-main-link">{{ __('lang.Login') }}</a>
                         </p>
                     </div>
                 </div>

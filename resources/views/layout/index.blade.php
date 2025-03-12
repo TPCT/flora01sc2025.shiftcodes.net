@@ -52,17 +52,22 @@
             </button>
             <div class="collapse navbar-collapse mb-2 mb-lg-0" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active-1" href="{{ url('/upload') }}">Upload</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/premium') }}">Premium</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/tiers') }}">Earn Money</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('api') }}">Service API</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('tos') }}">Terms Of Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">Contacts</a></li>
+                    <li class="nav-item"><a class="nav-link active-1" href="{{ url('/upload') }}">{{ __('lang.Upload') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/premium') }}">{{ __('lang.Premium') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/tiers') }}">{{ __('lang.Earn Money') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('api') }}">{{ __('lang.Service API') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('tos') }}">{{ __('lang.Terms Of Service') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">{{ __('lang.About Us') }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">{{ __('lang.Contacts') }}</a></li>
                 </ul>
                 <div class="buttons d-flex align-items-start gap-2 flex-column flex-lg-row">
-                    <a href="{{ route('login') }}" class="btn secondary-btn">Login</a>
-                    <a href="{{ route('register')}}" class="btn main-btn">Register</a>
+                    @guest
+                    <a href="{{ route('login') }}" class="btn secondary-btn">{{ __('lang.Login') }}</a>
+                    <a href="{{ route('register')}}" class="btn main-btn">{{ __('lang.Register') }}</a>
+                    @endguest
+                    <a href="{{ route('change.lang', app()->getLocale() == 'en' ? 'ar' : 'en') }}">
+                        <i class="fa-solid fa-earth-europe"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -79,25 +84,25 @@
           <div class="row">
             <div class="col-lg-4 d-flex flex-column justify-content-between">
               <div class="mb-3">
-                <a href="./home.html" class="logo">
+                <a href="/" class="logo">
                   <img src="./assets/footerlogo3.svg" alt="">
                 </a>
               </div>
-              <p class="text-muted">© 2023 VIDTUBE. <br> All rights reserved.</p>
+              <p class="text-muted">© 2023 VIDTUBE. <br> {{ __('lang.All rights reserved.') }}</p>
             </div>
             <div class="col-lg-3">
               <div class="nav flex-column mb-2">
-                <a href="./tos.html" class="nav-link">Terms of service</a>
-                <a href="./api.html" class="nav-link">API Documentation</a>
-                <a href="./about-us.html" class="nav-link">FAQ</a>
+                <a href="{{ ('/tos') }}" class="nav-link">{{ __('lang.Terms of service') }}</a>
+                <a href="{{ ('/api') }}" class="nav-link">{{ __('lang.API Documentation') }}</a>
+                <a href="{{ ('/about') }}" class="nav-link">{{ __('lang.FAQ') }}</a>
               </div>
             </div>
             <div class="col-lg-3">
               <div class="nav flex-column mb-2">
-                <a href="./premium.html" class="nav-link">Premium</a>
-                <a href="./EarnMoney.html" class="nav-link">Earn money</a>
-                <a href="/checkfiles.html" class="nav-link">Link Checker</a>
-                <a href="./Contact.html" class="nav-link">Contact Us</a>
+                <a href="/premium" class="nav-link">{{ __('lang.Premium') }}</a>
+                <a href="{{ ('/tiers') }}" class="nav-link">{{ __('lang.Earn money') }}</a>
+                <a href="/checkfiles.html" class="nav-link">{{ __('lang.Link Checker') }}</a>
+                <a href="{{ ('/contact') }}" class="nav-link">{{ __('lang.Contact Us') }}</a>
               </div>
             </div>
             <div class="col-lg-2 align-self-end text-end">

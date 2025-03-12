@@ -42,9 +42,9 @@
 
                 <div class="mb-4">
                     <div class="mb-2">
-                        <a href="./change-password.html" class="btn border rounded-pill">Change password</a>
+                        <a href="{{ ('/change-password') }}" class="btn border rounded-pill">Change password</a>
                     </div>
-                    <a href="./change-email.html" class="btn border rounded-pill">Change e-mail</a>
+                    <a href="{{ ('/change-email') }}" class="btn border rounded-pill">Change e-mail</a>
                 </div>
 
                 <hr class="mb-4">
@@ -80,7 +80,8 @@
                     role="tab">Ads mode</a>
             </div>
 
-            <form>
+            <form method="POST" action="{{ route('user.updateSecurity') }}">
+                @csrf
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="details" role="tabpanel">
                         <div class="block">
@@ -91,7 +92,8 @@
                                 <div class="mb-4 row align-items-center">
                                     <label class="col-xl-3 col-form-label">Country:</label>
                                     <div class="col-xl-8 col-xxl-7">
-                                        <input type="text" class="form-control" name="" value="">
+                                        <input type="text" class="form-control" name="unnamed_field"
+                                            value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                     </div>
                                 </div>
 
@@ -101,10 +103,11 @@
                                     <div class="col-xl-8 col-xxl-7">
                                         <div class="row">
                                             <div class="col-lg-auto flex-grow-1 flex-shrink-1 mb-4 mb-lg-0">
-                                                <input type="text" name="" class="form-control" value="">
+                                                <input type="text" name="unnamed_field" class="form-control"
+                                                    value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                             </div>
                                             <div class="col-lg-auto">
-                                                <select class="form-select" name="" style="width:130px;">
+                                                <select class="form-select" name="unnamed_field" style="width:130px;">
 
                                                     <option value="PayPal" selected="">PayPal</option>
 
@@ -152,7 +155,8 @@
                                 <div class="mb-4 row align-items-center">
                                     <label class="col-xl-3 col-form-label ">Channel Name:</label>
                                     <div class="col-xl-8 col-xxl-7">
-                                        <input class="form-control" type="text" name="" value="">
+                                        <input class="form-control" type="text" name="unnamed_field"
+                                            value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                     </div>
                                 </div>
 
@@ -161,7 +165,8 @@
                                     <div class="col-xl-8 col-xxl-7">
 
 
-                                        <input type="file" name="" accept="image/*" class="form-control">
+                                        <input type="file" name="unnamed_field" accept="image/*"
+                                            class="form-control">
 
 
 
@@ -183,15 +188,19 @@
                     <div class="tab-pane fade" id="security" role="tabpanel">
                         <div class="block">
                             <div class="block-bg p-lg-5">
-
-                                <form action="/account/security" method="POST">
+                                <form action="{{ route('user.updateSecurity') }}" method="POST"
+                                    enctype="application/x-www-form-urlencoded" method="POST"
+                                    action="{{ route('user.updateSecurity') }}">
                                     @csrf
+
+
 
                                     <div class="mb-4 row align-items-center">
                                         <label class="col-xl-3 col-form-label">Security lock:</label>
                                         <div class="col-xl-8 col-xxl-7">
                                             <div class="form-switcher align-items-center">
                                                 <input type="checkbox" name="two_factor_auth"
+                                                    {{ old('two_factor_auth', auth()->user()?->securitySetting?->two_factor_auth ?? false) ? 'checked' : '' }}
                                                     {{ optional(auth()->user()->securitySetting)->two_factor_auth ? 'checked' : '' }}>
                                             </div>
                                         </div>
@@ -209,11 +218,15 @@
                                         <label class="col-xl-3 col-form-label text-xl-end">On login:</label>
                                         <div class="col-xl-8 col-xxl-7">
                                             <label class="form-check-radio mb-2">
-                                                <input class="me-2" type="checkbox" name="logout_sessions" value="1">
+                                                <input class="me-2" type="checkbox" name="logout_sessions"
+                                                    {{ old('logout_sessions', auth()->user()?->securitySetting?->logout_sessions ?? false) ? 'checked' : '' }}
+                                                    value="1">
                                                 Logout all current sessions
                                             </label>
                                             <label class="form-check-radio mb-2">
-                                                <input class="me-2" type="checkbox" name="email_new_ip" value="1"
+                                                <input class="me-2" type="checkbox" name="email_new_ip"
+                                                    {{ old('email_new_ip', auth()->user()?->securitySetting?->email_new_ip ?? false) ? 'checked' : '' }}
+                                                    value="1"
                                                     {{ optional(auth()->user()->securitySetting)->email_new_ip ? 'checked' : '' }}>
                                                 Email when login from new IP
                                             </label>
@@ -241,7 +254,8 @@
                                 <div class="mb-4 row">
                                     <label class="col-xl-3 col-form-label text-xl-end">Allowed embed domains:</label>
                                     <div class="col-xl-8 col-xxl-7">
-                                        <input type="text" name="" class="form-control" value="">
+                                        <input type="text" name="unnamed_field" class="form-control"
+                                            value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                         <div class="form-text">Site domain where you can put embed codes. Empty to allow
                                             all sites.<br>e.g.:
                                             site1.com, site2.net</div>
@@ -251,7 +265,8 @@
                                 <div class="mb-4 row">
                                     <label class="col-xl-3 col-form-label text-xl-end">Banned countries:</label>
                                     <div class="col-xl-8 col-xxl-7">
-                                        <input type="text" name="" class="form-control" value=""
+                                        <input type="text" name="unnamed_field" class="form-control"
+                                            value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}"
                                             aria-describedby="banc">
                                         <div class="form-text" id="banc">e.g. US|CA|FR</div>
                                     </div>
@@ -260,7 +275,8 @@
                                 <div class="mb-4 row">
                                     <label class="col-xl-3 col-form-label text-xl-end">Banned IPs:</label>
                                     <div class="col-xl-8 col-xxl-7">
-                                        <input type="text" name="" class="form-control" value=""
+                                        <input type="text" name="unnamed_field" class="form-control"
+                                            value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}"
                                             aria-describedby="banip">
                                         <div class="form-text" id="banip">e.g. 1.1.1.1, 2.3.4.*</div>
                                     </div>
@@ -270,7 +286,9 @@
                                     <label class="col-xl-3 col-form-label text-xl-end">Block direct access:</label>
                                     <div class="col-xl-8 col-xxl-7">
                                         <label class="form-check-radio"><input class="me-2" type="checkbox"
-                                                name="" value="">
+                                                name="unnamed_field"
+                                                {{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? false) ? 'checked' : '' }}
+                                                value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                             Allow embeds only</label>
                                     </div>
                                 </div>
@@ -279,7 +297,9 @@
                                     <label class="col-xl-3 col-form-label text-xl-end">Video title in Embeds:</label>
                                     <div class="col-xl-8 col-xxl-7">
                                         <label class="form-check-radio"><input class="me-2" type="checkbox"
-                                                name="" value="">
+                                                name="unnamed_field"
+                                                {{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? false) ? 'checked' : '' }}
+                                                value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                             Show</label>
                                     </div>
                                 </div>
@@ -291,7 +311,9 @@
                                     <label class="col-xl-3 col-form-label text-xl-end">Disable video convertion:</label>
                                     <div class="col-xl-8 col-xxl-7">
                                         <label class="form-check-radio"><input class="me-2" type="checkbox"
-                                                name="" value="">
+                                                name="unnamed_field"
+                                                {{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? false) ? 'checked' : '' }}
+                                                value="{{ old('unnamed_field', auth()->user()?->securitySetting?->unnamed_field ?? '') }}">
                                             Enabled</label> <small>(video should be H264+AAC codecs)</small>
                                     </div>
                                 </div>

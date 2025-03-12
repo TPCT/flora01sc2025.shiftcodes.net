@@ -12,9 +12,9 @@ EarnMoney
     <section class="section earn py-5">
         <div class="container">
             <div class="text-center main-head mb-5">
-                <h1>Earn money</h1>
+                <h1>{{ __('lang.Earn money') }}</h1>
                 <div class="text-muted">
-                    Profit rates for each 1000 views of your video
+                    {{ __('lang.Profit rates for each 1000 views of your video') }}
                 </div>
             </div>
             <div class="mb-5 text-center">
@@ -57,16 +57,15 @@ EarnMoney
                         <path fill-rule="evenodd" fill="#8991AE" d="M7.5 0a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Z">
                         </path>
                     </svg>
-                    Rates for all other countries: $3
+                    {{ __('lang.Rates for all other countries') }}: $3
                 </div>
                 <div class="mb-3">
-                    <b class="brief-link fw-bold">Minimum payout: $25</b>
-                    <br>Payouts are processed within 24 hours for Paypal and 24h for Crypto
+                    <b class="brief-link fw-bold">{{ __('lang.Minimum payout') }}: $25</b>
+                    <br>{{ __('lang.Payouts are processed within 24 hours for Paypal and 24h for Crypto') }}
                 </div>
             </div>
         </div>
     </section>
-
     <!-- End Terms Of Service -->
 </main>
 

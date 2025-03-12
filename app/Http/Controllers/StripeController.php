@@ -65,7 +65,7 @@ class StripeController extends Controller
 
 public function paymentSuccess()
 {
-   
+
     return view('payment.success');
 }
 

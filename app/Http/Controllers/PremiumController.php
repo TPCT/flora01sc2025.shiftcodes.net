@@ -8,6 +8,6 @@ class PremiumController extends Controller
 {
     public function extend()
     {
-        return view('premium.extend'); 
+        return view('premium.extend');
     }
 }

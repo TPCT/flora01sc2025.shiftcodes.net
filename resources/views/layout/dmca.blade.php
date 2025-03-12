@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        @yield('title')
-    </title>
     <link href="./css/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="./js/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./js/slick-1.8.1/slick/slick-theme.css" />
@@ -19,14 +16,14 @@
     <link href="./css/brands.css" rel="stylesheet" type="text/css" />
     <link href="./css/fontawesome.css" rel="stylesheet" type="text/css" />
     <link href="./css/footer.css" rel="stylesheet" type="text/css" />
-    <!-- <link href="./css/navbar.css" rel="stylesheet" type="text/css" /> -->
-    <link href="./css/my-vedio.css" rel="stylesheet" type="text/css" />
+    <link href="./css/navbar.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="./css/dashboard.css" rel="stylesheet" type="text/css" /> -->
     <link href="./css/styles.css" rel="stylesheet" type="text/css" />
     <link href="./css/arabic-styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/custom.css" />
-
     @stack('style')
+
     <script type="text/javascript" src="./js/fancybox.umd.js"></script>
     <script type="text/javascript" src="./js/jquery-3.7.1.js"></script>
     <script type="text/javascript" src="./js/slick-1.8.1/slick/slick.min.js"></script>
@@ -39,12 +36,11 @@
     <script src="./js/main.js"></script>
 </head>
 
-<body class="">
-
+<body class=" ">
     <div class="navpanel">
         <div class="btn icon-btn d-lg-none navpanel-close btn-close"></div>
         <div class="navpanel-logo">
-            <a href="/">
+            <a href="{{ ("/") }}">
                 <img src="./assets/logo.svg" alt="">
             </a>
         </div>
@@ -63,7 +59,7 @@
                         </path>
                     </svg>
                 </span> {{ __('lang.Account') }} </a>
-            <a href="{{ '/videos' }}" class="nav-link active">
+            <a href="{{ '/videos' }}" class="nav-link">
                 <span class="navpanel-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14">
                         <defs>
@@ -105,7 +101,7 @@
                         </path>
                     </svg>
                 </span> {{ __('lang.Reports') }} </a>
-            <a href="{{ ('/dmca') }}" class="nav-link">
+            <a href="{{ ('/dmca') }}" class="nav-link active">
                 <span class="navpanel-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20">
                         <defs>
@@ -147,7 +143,7 @@
                             d="M19 10c-.408 0-1 .779-1 2v3c0 1.654-1.346 3-3 3a1 1 0 1 1 0-2 1 1 0 0 0 1-1v-3c0-1.207.381-2.273.995-3C16.381 8.272 16 7.206 16 6V3c0-.551-.448-1-1-1a1 1 0 1 1 0-2c1.654 0 3 1.346 3 3v3c0 1.221.592 2 1 2a1 1 0 1 1 0 2ZM4 15c0 .552.449 1 1 1a1 1 0 1 1 0 2c-1.654 0-3-1.346-3-3v-3c0-1.221-.592-2-1-2a1 1 0 1 1 0-2c.408 0 1-.779 1-2V3c0-1.654 1.346-3 3-3a1 1 0 0 1 0 2c-.551 0-1 .449-1 1v3c0 1.206-.381 2.272-.996 3 .615.727.996 1.793.996 3v3Z">
                         </path>
                     </svg>
-                </span> {{ __('lang.API Docs') }}</a>
+                </span> API Docs</a>
             <a href="{{ ('contact') }}" class="nav-link">
                 <span class="navpanel-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16">
@@ -163,14 +159,8 @@
                     </svg>
                 </span> {{ __('lang.Support') }} </a>
         </div>
-        <div class="block storage">
-            <div class="semi-donut mb-3" style="--percentage : 80; ">
-              Storage
-            </div>
-            <div class="small text-muted text-center">{{ __('lang.Used space') }} <b>0.0</b> GB</div>
-          </div>
     </div>
-    <header class="">
+    <header class="header">
         <div class="container-fluid">
             <div class="row align-items-center header-row">
                 <div class="col-auto d-lg-none">
@@ -187,74 +177,46 @@
                         <img src="./assets/logo.svg" alt="">
                     </a>
                 </div>
-                <div class="col-auto mb-4 header-title">
-                    <h3>Videos</h3>
-                </div>
-                <div class="col-auto flex-grow-1 header-nav">
-                    <div class="files-nav">
-                    </div>
+                <div class="col-auto header-title">
+                    <h3>{{ __('lang.DMCA Reported Files') }}</h3>
                 </div>
                 <div class="col-auto header-js d-none"></div>
-                <div class="col-auto mb-4 ms-auto">
+                <div class="col-auto ms-auto">
                     @auth
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="btn logout-btn rounded-pill">{{ __('lang.logou') }}</button>
                     </form>
                     @endauth
-
                 </div>
             </div>
         </div>
-
     </header>
-@yield('main')
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const tabs = document.querySelectorAll('.nav-link');
-        const blocks = document.querySelectorAll('.block');
+    @yield('main')
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // إزالة الكلاس active من كل التبويبات
-                tabs.forEach(t => t.classList.remove('active'));
-                // إخفاء كل الأقسام
-                blocks.forEach(block => block.style.display = 'none');
 
-                // تفعيل التبويب الحالي
-                tab.classList.add('active');
-                const target = document.getElementById(tab.dataset.target);
-                if (target) target.style.display = 'block';
-            });
-        });
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  const navPanel = document.querySelector(".navpanel");
+  const toggleButton = document.querySelector(".open-menu");
+  const closeButton = document.querySelector(".navpanel-close");
 
-        // إظهار القسم الأول افتراضيًا
-        document.getElementById('div_file').style.display = 'block';
-        document.getElementById('div_url').style.display = 'none';
-    });
-</script>
+  // فتح القائمة
+  toggleButton.addEventListener("click", function () {
+    navPanel.classList.toggle("open");
+  });
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navPanel = document.querySelector(".navpanel");
-        const toggleButton = document.querySelector(".open-menu");
-        const closeButton = document.querySelector(".navpanel-close");
+  // إغلاق القائمة
+  closeButton.addEventListener("click", function () {
+    navPanel.classList.remove("open");
+  });
+});
 
-        // فتح القائمة
-        toggleButton.addEventListener("click", function () {
-            navPanel.classList.toggle("open");
-        });
+    </script>
 
-        // إغلاق القائمة
-        closeButton.addEventListener("click", function () {
-            navPanel.classList.remove("open");
-        });
-    });
-
-</script>
-
+@stack('script')
 </body>
 
 </html>

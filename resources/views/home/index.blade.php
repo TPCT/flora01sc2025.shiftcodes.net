@@ -14,17 +14,17 @@ home
           <img class="mw-100" src="./assets/landing-bg.png" alt="">
           <div class="content">
             <h1 class="mb-4">
-              Video Sharing Script
+              {{ __('lang.Video Sharing Script') }}
             </h1>
             <p class="text-center text-white fs-5">
-              Your videos are stored the safest fastest and earn real money.
+             {{__('lang.Your videos are stored the safest fastest and earn real money.')}}
             </p>
             <div class="buttons d-flex align-items-center  justify-content-center   gap-2 flex-column flex-lg-row ">
               <a href="#video" class=" btn main-btn popup-vimeo d-flex align-items-start justify-content-center ">
-                Get start
+                {{ __('lang.Get start') }}
               </a>
               <a href="#video" class=" btn third-btn popup-vimeo d-flex align-items-start justify-content-center ">
-                Premium plans
+               {{__('lang.Premium plans')}}
               </a>
             </div>
           </div>
@@ -36,7 +36,7 @@ home
         <div class="container">
           <div class="main-head text-center ">
             <h1>
-              Our features
+              {{ __('lang.Our features') }}
             </h1>
           </div>
           <div class="row g-3 g-lg-5 px-lg-5">
@@ -58,9 +58,9 @@ home
                     </path>
                   </svg>
                 </div>
-                <h4 class="mb-4">Cloud Storage</h4>
-                <p class="text-muted">Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
-                  id bibendum tristique non fringilla vitae platea.</p>
+                <h4 class="mb-4">{{ __('lang.Cloud Storage') }}</h4>
+                <p class="text-muted">{{__('lang.Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
+                  id bibendum tristique non fringilla vitae platea.')}}</p>
               </div>
             </div>
             <div class="col-lg-4">
@@ -81,9 +81,9 @@ home
                     </path>
                   </svg>
                 </div>
-                <h4 class="mb-4">Secure</h4>
-                <p class="text-muted">Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
-                  id bibendum tristique non fringilla vitae platea.</p>
+                <h4 class="mb-4">{{ __('lang.Secure') }}</h4>
+                <p class="text-muted">{{__('lang.Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
+                  id bibendum tristique non fringilla vitae platea.')}}</p>
               </div>
             </div>
             <div class="col-lg-4">
@@ -104,9 +104,9 @@ home
                     </path>
                   </svg>
                 </div>
-                <h4 class="mb-4">Streaming</h4>
-                <p class="text-muted">Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
-                  id bibendum tristique non fringilla vitae platea.</p>
+                <h4 class="mb-4">{{ __('lang.Streaming') }}</h4>
+                <p class="text-muted">{{__('lang.Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
+                  id bibendum tristique non fringilla vitae platea.')}}</p>
               </div>
             </div>
             <div class="col-lg-4">
@@ -127,9 +127,9 @@ home
                     </path>
                   </svg>
                 </div>
-                <h4 class="mb-4">Speed</h4>
-                <p class="text-muted">Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
-                  id bibendum tristique non fringilla vitae platea.</p>
+                <h4 class="mb-4">{{ __('lang.Speed') }}</h4>
+                <p class="text-muted">{{__('lang.Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
+                  id bibendum tristique non fringilla vitae platea.')}}</p>
               </div>
             </div>
             <div class="col-lg-4">
@@ -150,9 +150,9 @@ home
                     </path>
                   </svg>
                 </div>
-                <h4 class="mb-4">Support 24/7</h4>
-                <p class="text-muted">Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
-                  id bibendum tristique non fringilla vitae platea.</p>
+                <h4 class="mb-4">{{ __('lang.Support') }} 24/7</h4>
+                <p class="text-muted">{{__('lang.Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
+                  id bibendum tristique non fringilla vitae platea.')}}</p>
               </div>
             </div>
             <div class="col-lg-4">
@@ -173,9 +173,9 @@ home
                     </path>
                   </svg>
                 </div>
-                <h4 class="mb-4">Extensive statistics</h4>
-                <p class="text-muted">Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
-                  id bibendum tristique non fringilla vitae platea.</p>
+                <h4 class="mb-4">{{ __('lang.Extensive statistics') }}</h4>
+                <p class="text-muted">{{__('lang.Gravida non vel at egestas id. Nisi sagittis, enim eget sit imperdiet at. Urna velit
+                  id bibendum tristique non fringilla vitae platea.')}}</p>
               </div>
             </div>
           </div>
@@ -192,13 +192,13 @@ home
               </picture>
             </div>
             <div class="col-lg-8 d-flex align-items-start flex-column justify-content-center">
-              <h3 class="h1 mb-4">Sharing videos</h3>
+              <h3 class="h1 mb-4">{{ __('lang.Sharing videos') }}</h3>
               <div class="mb-5">
                 <p>
-                  Quickly upload any file type and share it with Xvideosharing.
+                  {{ __('lang.Quickly upload any file type and share it with Xvideosharing.') }}
                 </p>
               </div>
-              <div class="btn main-btn px-5">Register</div>
+              <div class="btn main-btn px-5">{{ __('lang.Register') }}</div>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@ home
         <div class="container">
           <div class="main-head text-center ">
             <h1>
-              Need to know
+              {{ __('lang.Need to know') }}
             </h1>
           </div>
           <div class="row">
@@ -220,14 +220,14 @@ home
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
 
-                      What is XVideoSharing?
+                      {{ __('lang.What is') }} XVideoSharing?
 
                     </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">XVideoSharing is a video hosting provider. We offer online storage,
-                      sophisticated uploading and video streaming tools. With XVideoSharing you can host your videos and
-                      play them online from browser / mobile devices.
+                    <div class="accordion-body">XVideoSharing {{__('lang.is a video hosting provider. We offer online storage,
+                      sophisticated uploading and video streaming tools.')}} {{__('lang.With XVideoSharing you can host your videos and
+                      play them online from browser / mobile devices.')}}
                     </div>
                   </div>
                 </div>
@@ -236,26 +236,26 @@ home
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
 
-                      Why should I use XVideoSharing?
+                     {{__('lang. Why should I use')}} XVideoSharing?
 
                     </button>
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Whenever you need to share a video, XVideoSharing can help.
+                    <div class="accordion-body">{{ __('lang.Whenever you need to share a video,') }} XVideoSharing {{__('lang.can help.
                       We optimize quality / size of your videos and make them playable in web player. So you can start
-                      watching video quickly without downloading whole file.</div>
+                      watching video quickly without downloading whole file.')}}</div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                      Can I search for files other people uploaded?
+                      {{ __('lang.Can I search for files other people uploaded?') }}
                     </button>
                   </h2>
                   <div id="flush-collapseThree" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Yes, you can Search for other video files that were marked as Public.
+                    <div class="accordion-body">{{ __('lang.Yes, you can Search for other video files that were marked as Public.') }}
                     </div>
                   </div>
                 </div>
@@ -268,16 +268,16 @@ home
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
 
-                      what kind of files can be uploaded
+                      {{ __('lang.what kind of files can be uploaded') }}
 
                     </button>
                   </h2>
                   <div id="flush-collapseFour" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExampleOne">
-                    <div class="accordion-body">All video format files.
+                    <div class="accordion-body">A{{__('lang.ll video format files.
                       The only restrictions are for copyrighted material, pornography, nudity and any kind offensive
                       material.
-                      Please refer to our TOS for more info on XVideoSharing terms of service</div>
+                      Please refer to our TOS for more info on XVideoSharing terms of service')}}</div>
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -285,14 +285,14 @@ home
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
 
-                      How to delete afile i uploaded?
+                      {{ __('lang.How to delete afile i uploaded?') }}
 
                     </button>
                   </h2>
                   <div id="flush-collapseFive" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExampleOne">
-                    <div class="accordion-body">To delete a file you uploaded you can use Delete Link that was provided to
-                      you after the upload proccess or delete it from My Videos page.</div>
+                    <div class="accordion-body">{{('lang.To delete a file you uploaded you can use Delete Link that was provided to
+                      you after the upload proccess or delete it from My Videos page.')}}</div>
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -300,14 +300,14 @@ home
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
 
-                      Can i hotlink the stuff i upload?
+                     {{__('lang.Can i hotlink the stuff i upload?')}}
 
                     </button>
                   </h2>
                   <div id="flush-collapseSix" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExampleOne">
-                    <div class="accordion-body">No. Hotlinking is not allowed on any kind of files uploaded to our
-                      servers.</div>
+                    <div class="accordion-body">{{__('lang.No. Hotlinking is not allowed on any kind of files uploaded to our
+                      servers.')}}</div>
                   </div>
                 </div>
               </div>
@@ -321,17 +321,17 @@ home
         <div class="container">
           <div class="row">
             <div class="col-lg-8 d-flex align-items-start flex-column justify-content-center">
-              <h3 class="h1 mb-4">Earn money
+              <h3 class="h1 mb-4">{{ __('lang.Earn money') }}
               </h3>
               <div class="mb-5">
                 <p class="fw-bold m-0">
-                  Earn a fixed amount per 10,000 downloads or streams.
+                 {{__('lang.Earn a fixed amount per 10,000 downloads or streams.')}}
                 </p>
                 <p class="m-0">
-                  The payment amount is defined by the origin country referred to in the Level table / Worldmap below.
+                  {{ __('lang.The payment amount is defined by the origin country referred to in the Level table / Worldmap below.') }}
                 </p>
               </div>
-              <div class="btn main-btn px-5">Details</div>
+              <div class="btn main-btn px-5">{{ __('lang.Details') }}</div>
             </div>
             <div class="col-lg-4 mb-4 d-flex align-items-center  justify-content-center ">
               <picture>
