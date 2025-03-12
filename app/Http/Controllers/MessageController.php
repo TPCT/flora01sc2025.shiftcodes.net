@@ -51,7 +51,7 @@ class MessageController extends Controller
         $message->user_name = $request->user_name;
         $message->email = $request->email;
         $message->message = $request->message;
-        $message->user_id = auth()->id(); // Store the current user's ID
+        $message->user_id = auth()->id();
         $message->save();
 
         return redirect()->route('contact.index')->with('success', 'Message sent successfully.');

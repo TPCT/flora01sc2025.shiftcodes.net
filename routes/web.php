@@ -31,6 +31,12 @@ Route::get('about', function () {
 Route::get('tos', function () {
     return view('Terms Of Service.index');
 });
+Route::get('api', function () {
+    return view('Api.index');
+});
+Route::get('reports', function () {
+    return view('Reports.index');
+});
 
 Route::get('/contact', [MessageController::class, 'index'])->name('contact.index');
 Route::post('/messages', [MessageController::class, 'store'])->name('message.store');

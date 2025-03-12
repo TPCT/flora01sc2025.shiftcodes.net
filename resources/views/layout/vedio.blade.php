@@ -91,7 +91,7 @@
                         </path>
                     </svg>
                 </span> Upload </a>
-            <a href="./reports.html" class="nav-link">
+            <a href="{{ ('reports') }}" class="nav-link">
                 <span class="navpanel-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18">
                         <defs>
@@ -134,7 +134,7 @@
                         </path>
                     </svg>
                 </span> Earn money</a>
-            <a href="./api.html" class="nav-link">
+            <a href="{{ ('api') }}" class="nav-link">
                 <span class="navpanel-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18">
                         <defs>
